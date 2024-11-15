@@ -6,6 +6,7 @@ public class Main {
         deck.makeDeck();
         deck.shuffleDeck();
         hand.putCardInHand(deck);
+        hand.putCardInHand(deck);
         System.out.println(hand);
 
         

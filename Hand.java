@@ -20,4 +20,14 @@ public class Hand{
         hand.add(fetchCard);
     }
 
+    public String toString(){
+        //Use StringBuilder class.  Found this class after researching if Strings could be mutable in Java 
+        StringBuilder cards = new StringBuilder();
+        for (Card card : hand){
+            cards.append(card).append(", ");
+        }
+        return cards.toString();//String builder was returning an object, so I had to call the toString() method on this so I could actuall get the String I wanted.
+    }
+
+    //make a function to calculate what the total of the cards in your hand are??
 }
