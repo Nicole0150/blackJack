@@ -10,6 +10,8 @@ public class Main {
         System.out.println(hand);
         int total = hand.calculateTotalHand();
         System.out.println(total);
+        Person nicole = new Person();
+        nicole.setName("Nicole");
 
         
         //poss add in rules information?  Conditional for do you know the rules and if no, make a rules class?
