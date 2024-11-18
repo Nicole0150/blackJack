@@ -8,6 +8,8 @@ public class Main {
         hand.putCardInHand(deck);
         hand.putCardInHand(deck);
         System.out.println(hand);
+        int total = hand.calculateTotalHand();
+        System.out.println(total);
 
         
         //poss add in rules information?  Conditional for do you know the rules and if no, make a rules class?

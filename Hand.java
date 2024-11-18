@@ -20,6 +20,14 @@ public class Hand{
         hand.add(fetchCard);
     }
 
+    public int calculateTotalHand(){
+        int total = 0;
+        for (Card card: hand){
+            total += card.getValue();
+        }
+        return total;
+    }
+
     public String toString(){
         //Use StringBuilder class.  Found this class after researching if Strings could be mutable in Java 
         StringBuilder cards = new StringBuilder();
@@ -30,4 +38,5 @@ public class Hand{
     }
 
     //make a function to calculate what the total of the cards in your hand are??
+
 }
