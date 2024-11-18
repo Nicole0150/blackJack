@@ -1,4 +1,5 @@
-public class Person{
+public abstract class Person{ //the reason this is abstract is because im never just going to create a Person, it will always be a Dealer or Player 
+//you cant directly create an instance of abstract class
     private String name;
     private Hand hand;
 
@@ -25,5 +26,13 @@ public class Person{
 
     public void setHand(Hand hand){
         this.hand = hand;
+    }
+
+    public boolean hasBlackJack(Hand hand){
+        if(hand.calculateTotalHand() == 21){
+            return true;
+        }else {
+            return false;
+        }
     }
 }
