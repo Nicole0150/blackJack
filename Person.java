@@ -28,6 +28,11 @@ public abstract class Person{ //the reason this is abstract is because im never 
         this.hand = hand;
     }
 
+    public void printHand(){
+        System.out.println(this.name + " hand: ");
+        System.out.println(this.hand + " hand value: " + this.hand.calculateTotalHand());
+    }
+
     public boolean hasBlackJack(Hand hand){
         if(hand.calculateTotalHand() == 21){
             return true;
