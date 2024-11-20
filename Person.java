@@ -28,11 +28,26 @@ public abstract class Person{ //the reason this is abstract is because im never 
         this.hand = hand;
     }
 
+    public void printHand(){
+        System.out.println(this.name + " hand: ");
+        System.out.println(this.hand + " hand value: " + this.hand.calculateTotalHand());
+    }
+
     public boolean hasBlackJack(Hand hand){
         if(hand.calculateTotalHand() == 21){
             return true;
         }else {
             return false;
         }
+    }
+
+    public void hit(DeckList deck, Decklist discardDeck){
+        if(!deck.hasCards()){
+            deck.discardToMainDeck(discardDeck);
+        }// just added this bit of code in so it doesnt run into errors trying to remove a card from an empty deck, this activates the reloading and reshuffling of a new deck
+        this.hand.putCardInHand(deck);
+        System.out.println(this.name + "was given a card. ");
+        this.printHand();
+
     }
 }

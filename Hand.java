@@ -38,6 +38,10 @@ public class Hand{
         }
         return total;
     }
+    //needed to add getCard for the dealer's first card in hand
+    public Card getCard(int index){
+        return hand.get(index);
+    }
 
     public String toString(){
         //Use StringBuilder class.  Found this class after researching if Strings could be mutable in Java 
