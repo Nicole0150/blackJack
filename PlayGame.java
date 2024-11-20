@@ -52,5 +52,8 @@ public class PlayGame{
             this.player1Score++;
         }
 
+        player1.playerDecision(deck, discardDeck);
+
     }
+   
 }

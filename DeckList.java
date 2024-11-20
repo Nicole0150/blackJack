@@ -42,5 +42,30 @@ public class DeckList{
         Card card = deckList.remove(0);
         return card;
     }
+    //this was easier to read when implemented here rather than in the body if the function where I use it, basically just checking that the deck I want to take from has cards in it
+    public boolean hasCards(){
+        if (deckList.size() > 0){
+            return true;
+        } else{
+            return false;
+        }
+    }
+
+    //now need to add methods that takes the discard pile and shuffles it into the main deck
+
+    public void clearDeck(){
+        deckList.clear(); //build in functionality for ArrayLists
+    }
+
+    public void addCards(ArrayList<Card> cards){
+        deckList.add(cards);
+    }
+
+    public void discardToMainDeck(DeckList discard){
+        this.addCards(discard.getDeckList());//call the get DeckList function on the discard pile of your choice + then calls the addCards function that adds all the cards to the AL
+        this.shuffleDeck(); //then it shuffles them
+        discard.emptyDeck();// because the above function copies the discard pile to the deck, you need to empty that to signify that they've been moved over
+        System.out.println("Created new deck.");
+    }
 
 }
