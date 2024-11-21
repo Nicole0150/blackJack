@@ -41,18 +41,50 @@ public class PlayGame{
                 System.out.println("It's a tie!");
                 this.player1Score++;
                 this.dealerScore++;
+                startRound();
             } else{
                 System.out.println("Dealer has Blackjack, you lose.");
                 this.dealerScore++;
+                startRound();
             }
         }
 
         if(player1.hasBlackJack(player1.getHand())){
             System.out.println("You have Blackjack, you win!");
             this.player1Score++;
+            startRound();
         }
 
         player1.playerDecision(deck, discardDeck);
+
+        if(player1.getHand().calculateTotalHand() > 21){
+            System.out.println("You went bust :(");
+            dealerScore++;
+            startRound();
+        }
+
+        //dealer logic insert here
+        dealer.printHand();
+        while(dealer.getHand().calculateTotalHand() < 17){
+            dealer.hit(deck, discardDeck);
+        }
+
+        if (dealer.getHand().calculateTotalHand() > 21){
+            System.out.println("Dealer went bust, you win! ");
+            player1Score++;
+        } else if (dealer.getHand().calculateTotalHand() > player1.getHand().calculateTotalHand()){
+            System.out.println("You lose :( ");
+            dealerScore++;
+        } else if (player1.getHand().calculateTotalHand() > dealer.getHand().calculateTotalHand()){
+            System.out.println("You win :) ");
+            player1Score++;
+        } else{
+            System.out.println("It's a tie! ");
+            player1Score++;
+            dealerScore++;
+        }
+
+        startRound();
 
     }
    
