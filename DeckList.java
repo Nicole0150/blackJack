@@ -58,13 +58,13 @@ public class DeckList{
     }
 
     public void addCards(ArrayList<Card> cards){
-        deckList.add(cards);
+        deckList.addAll(cards); //changed from add as this was the wrong method to use for adding multiple instances
     }
 
     public void discardToMainDeck(DeckList discard){
         this.addCards(discard.getDeckList());//call the get DeckList function on the discard pile of your choice + then calls the addCards function that adds all the cards to the AL
         this.shuffleDeck(); //then it shuffles them
-        discard.emptyDeck();// because the above function copies the discard pile to the deck, you need to empty that to signify that they've been moved over
+        discard.clearDeck(); // because the above function copies the discard pile to the deck, you need to empty that to signify that they've been moved over
         System.out.println("Created new deck.");
     }
 
