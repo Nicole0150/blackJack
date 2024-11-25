@@ -52,6 +52,11 @@ public class Hand{
         return cards.toString();//String builder was returning an object, so I had to call the toString() method on this so I could actuall get the String I wanted.
     }
 
+    public void discardHandToDeck(DeckList discardDeck){//adding this in because it basically stores all your previous cards in your hand and never gets rid of them making you have a massive hand 
+        discardDeck.addCards(hand);
+        hand.clear();
+    }
+
     //make a function to calculate what the total of the cards in your hand are??
 
 }

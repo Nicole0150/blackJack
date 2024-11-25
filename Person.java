@@ -46,7 +46,7 @@ public abstract class Person{ //the reason this is abstract is because im never 
             deck.discardToMainDeck(discardDeck);
         }// just added this bit of code in so it doesnt run into errors trying to remove a card from an empty deck, this activates the reloading and reshuffling of a new deck
         this.hand.putCardInHand(deck);
-        System.out.println(this.name + "was given a card. ");
+        System.out.println(this.name + " was given a card. ");
         this.printHand();
     }
 }

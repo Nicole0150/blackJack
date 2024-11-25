@@ -25,7 +25,6 @@ public class Player extends Person{
         if (decision == 1){
             this.hit(deck, discardDeck);
             if(this.getHand().calculateTotalHand()>20){
-                System.out.println("You went bust :(");
                 return; ///this is to exit if they went bust
             } else{
                 this.playerDecision(deck, discardDeck); //this just gives them the option to hit again if they didn't go bust
