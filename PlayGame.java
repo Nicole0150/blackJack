@@ -1,9 +1,13 @@
+import java.util.Scanner; //add in
+
 public class PlayGame{
     private int player1Score;
     private int dealerScore;
     private DeckList deck, discardDeck;
     private Player player1;
     private Dealer dealer;
+
+    Scanner scanner = new Scanner(System.in);
     
 
     public PlayGame(){
@@ -91,7 +95,24 @@ public class PlayGame{
             dealerScore++;
         }
 
-        startRound();
+        this.playAgain();
+
+    }
+
+    public void playAgain(){//add in
+        int decision = 0;
+        System.out.println("Would you like to play again? Enter (1)Yes, (2)No. ");
+        decision = scanner.nextInt();
+        try{
+            if(decision == 1){
+                startRound();
+            } else{
+                return;
+            }
+        } catch(Exception e){
+            System.out.println("Invalid input.  ");
+            scanner.next();
+        }
 
     }
    
