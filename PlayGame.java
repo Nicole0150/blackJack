@@ -101,18 +101,29 @@ public class PlayGame{
 
     public void playAgain(){//add in
         int decision = 0;
-        System.out.println("Would you like to play again? Enter (1)Yes, (2)No. ");
-        decision = scanner.nextInt();
-        try{
-            if(decision == 1){
-                startRound();
-            } else{
-                return;
+        boolean decisionMade = true;
+        while (decisionMade){
+            try{
+                System.out.println("Would you like to play again? Enter (1)Yes, (2)No. ");
+                decision = scanner.nextInt();
+                if(decision == 1){
+                    startRound();
+                    break;
+
+                } else{
+                    System.out.println("Thanks for playing!");
+                    System.out.println("Final Scores: ");
+                    System.out.println("Player1:  " + player1Score);
+                    System.out.println("Dealer:  " + dealerScore);
+                    break;
+                }
+            
+            } catch(Exception e){
+                System.out.println("Invalid input.  ");
+                scanner.next();
             }
-        } catch(Exception e){
-            System.out.println("Invalid input.  ");
-            scanner.next();
         }
+
 
     }
    
