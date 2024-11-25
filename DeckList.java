@@ -15,10 +15,12 @@ public class DeckList{
     //make a method that constructs a deck - youll need nested for/ each loops look at W3 schools, remember the .add() method for decklists (again w3 schools)
 
     public ArrayList<Card> makeDeck(){
-        for(Suit suit : Suit.values()){
-            for(Rank rank : Rank.values()){
-                Card newCard = new Card(suit, rank);
-                deckList.add(newCard);
+        for(int i = 0; i < 6; i++){
+            for(Suit suit : Suit.values()){
+                for(Rank rank : Rank.values()){
+                    Card newCard = new Card(suit, rank);
+                    deckList.add(newCard);
+                }
             }
         }
         return deckList;
