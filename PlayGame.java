@@ -115,10 +115,7 @@ public class PlayGame{
                     break;
 
                 } else if (decision == 2){
-                    System.out.println("Thanks for playing!");
-                    System.out.println("Final Scores: ");
-                    System.out.println("Player1:  " + player1Score);
-                    System.out.println("Dealer:  " + dealerScore);
+                    System.out.println("Thanks for playing!\nFinal Scores:\nPlayer1: " + player1Score + "\nDealer: " + dealerScore);
                     break;
                 }
             
