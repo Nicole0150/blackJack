@@ -7,7 +7,7 @@ public class Card{
         this.rank = rank;
     }
 
-    //we're making this private because again, they're constant entities and we don't want anyone else to be able to change them - that's cheating :)
+    //we're making this private because again, they're constant entities and we don't want anyone else to be able to change them 
 
     //but we do need getter methods
     public Rank getRank(){

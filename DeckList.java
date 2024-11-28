@@ -7,7 +7,7 @@ public class DeckList{
     public DeckList(){
         deckList = new ArrayList<Card>();
     }
-    //make a getter because its private - dont forget to return it (You always forget to return it)
+    //make a getter because its private - dont forget to return it 
 
     public ArrayList<Card> getDeckList(){
         return this.deckList;

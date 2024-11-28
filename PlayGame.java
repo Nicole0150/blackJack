@@ -52,18 +52,18 @@ public class PlayGame{
                 System.out.println("It's a tie!");
                 this.player1Score++;
                 this.dealerScore++;
-                //
+                startRound();
             } else{
                 System.out.println("Dealer has Blackjack, you lose.");
                 this.dealerScore++;
-                //
+                startRound();
             }
         }
 
         if(player1.hasBlackJack(player1.getHand())){
             System.out.println("You have Blackjack, you win!");
             this.player1Score++;
-            //playAgain();
+            startRound();
         }
 
         player1.playerDecision(deck, discardDeck);
@@ -71,7 +71,7 @@ public class PlayGame{
         if(player1.getHand().calculateTotalHand() > 21){
             System.out.println("You went bust :(");
             dealerScore++;
-            //playAgain();
+            startRound();
         }
 
         //dealer logic insert here
@@ -83,49 +83,53 @@ public class PlayGame{
         if (dealer.getHand().calculateTotalHand() > 21){
             System.out.println("Dealer went bust, you win! ");
             player1Score++;
+            startRound();
             //playAgain(); Left this in as example of where I tripped up - entered a half finished recursion loop that meant inputting No multiple times before it exited the program
         } else if (dealer.getHand().calculateTotalHand() > player1.getHand().calculateTotalHand()){
             System.out.println("You lose :( ");
             dealerScore++;
             //playAgain();
+            startRound();
         } else if (player1.getHand().calculateTotalHand() > dealer.getHand().calculateTotalHand()){
             System.out.println("You win :) ");
             player1Score++;
             //playAgain();
+            startRound();
         } else{
             System.out.println("It's a tie! ");
             player1Score++;
             dealerScore++;
             //playAgain();
+            startRound();
         }
 
-        this.playAgain();
+    
 
     }
 
-    public void playAgain(){//add in
-        int decision = 0;
-        boolean decisionMade = true;
-        while (decisionMade){
-            try{
-                System.out.println("Would you like to play again? Enter (1)Yes, (2)No. ");
-                decision = scanner.nextInt();
-                if(decision == 1){
-                    startRound();
-                    break;
+    // public void playAgain(){//add in
+    //     int decision = 0;
+    //     boolean decisionMade = true;
+    //     while (decisionMade){
+    //         try{
+    //             System.out.println("Would you like to play again? Enter (1)Yes, (2)No. ");
+    //             decision = scanner.nextInt();
+    //             if(decision == 1){
+    //                 startRound();
+    //                 break;
 
-                } else if (decision == 2){
-                    System.out.println("Thanks for playing!\nFinal Scores:\nPlayer1: " + player1Score + "\nDealer: " + dealerScore);
-                    break;
-                }
+    //             } else if (decision == 2){
+    //                 System.out.println("Thanks for playing!\nFinal Scores:\nPlayer1: " + player1Score + "\nDealer: " + dealerScore);
+    //                 break;
+    //             }
             
-            } catch(Exception e){
-                System.out.println("Invalid input.  ");
-                scanner.next();
-            }
-        }
+    //         } catch(Exception e){
+    //             System.out.println("Invalid input.  ");
+    //             scanner.next();
+    //         }
+    //     }
 
 
-    }
+    // }
    
 }
