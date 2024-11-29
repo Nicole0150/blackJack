@@ -31,9 +31,9 @@ public class Hand{
             }
         }
         if (total > 21 && aces > 0){ //this is saying if these two conditions are filled, you will then go to the while loop
-            while (aces> 0 && total > 21){ //while the value remains over 21, or until you have no aces left (because theyre the only ones with dynamic values...)
-                aces--;// you iterate through the loop and change an ace from 11 til 1 (by -10) and then you essentially take that ace out of the count bc it's now a 1.
-                total -=10;//this is logically the same as just changing the ace from 11 til 1 but easier to write out logically. 
+            while (aces> 0 && total > 21){ //while the value remains over 21, and until you have no aces left (because theyre the only ones with dynamic values...)
+                aces--;// you iterate through the loop and change an ace from 11 to 1 (by -10) and then you essentially take that ace out of the count bc it's now a 1.
+                total -=10;//this is logically the same as just changing the ace from 11 to 1 but easier to write out logically. 
             }
         }
         return total;
@@ -56,7 +56,5 @@ public class Hand{
         discardDeck.addCards(hand);
         hand.clear();
     }
-
-    //make a function to calculate what the total of the cards in your hand are??
 
 }

@@ -27,7 +27,7 @@ public class PlayGame{
 
     public void startRound(){
         //give the cards out
-        //show one of the dealers card (youll need to make this in Dealer class)
+        //show one of the dealers card
         if (player1Score > 0 || dealerScore > 0){
             System.out.println();
             System.out.println("NEXT ROUND BEGINS...");
@@ -102,8 +102,6 @@ public class PlayGame{
             //playAgain();
             startRound();
         }
-
-    
 
     }
 
